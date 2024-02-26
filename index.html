@@ -9,9 +9,22 @@
     <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 
     <style>
+        .container {
+            display: flex;
+            align-items: top;
+            justify-content: center
+        }
+
         img {
-            max-width: 200px; 
-            height: 400px; 
+            max-width: 100%; 
+            max-height: 100%;
+            float:left; 
+            margin: 5px;
+        }
+
+        .text {
+            font-size: 20px;
+            padding-left: 20px;
         }
 
         navbar-fixed-top {
@@ -28,7 +41,7 @@
     <nav class="navbar navbar-dark navbar-expand-lg bg-dark navbar-default fixed-top">
         <div class="container-fluid">
             <div class="mx-4">
-                <a class="navbar-brand" href="#">Jack Luck Games</a>
+                <a class="navbar-brand" href="index.html#">Jack Luck Games</a>
             </div>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
@@ -38,106 +51,102 @@
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact Us</a>
+                        <a class="nav-link" href="index.html#contact">Contact Us</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#rocketripper">Rocket Ripper</a>
+                        <a class="nav-link" href="index.html#rocketripper">Rocket Ripper</a>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
 
+    <br><br>
     <br>
 
-    <div class="container my-5 ">
-
-        <div class="row justify-content-center">
-            <div class="col-2">
-                <img src="jack-luck-dog-logo.png" class="img" alt="" srcset="">
-            </div>
-            <div class="col-6 align-self-top">
-                <div class="my-3">
-                    <h1 style="color: darkgreen;" class="text-center">Jack Luck Games</h1>
-                    <p>We are a few passionate gamers and software developers. We are deeply enthusiastic about creating and
-                        developing software applications that inspire and engage our users. We are constantly learning and experimenting with new
-                        technologies and approaches, and we love to discover game play ideas that just make you keep coming back for more.
-                    </p>
-
-                    <p>Our current focus is developing 2D games for mobile, and we are hoping to release our first game in March 2024
-                        on the Apple App Store. We will follow-up with a Android release shortly after the iOS release. The first game is
-                        called Rocket Ripper. You can read more about this first game below.
-                    </p>
-
-                    <p>We are starting out as a family business with one full-time developer (dad) and two sons who could be considered full-time
-                        gamers when their schoolwork is done. The sons have been instrumental in ideas and testing for this first game release. We hope
-                        to start a youtube channel soon and begin some tutorials on Unity development. Like many indie game developers,
-                        we have found Google searching and YouTube videos to be instrumental in helping us solve the problem of the day. 
-                        We'd like to take some time and give back as well. Many thanks go to Unity for providing a great free-tier development 
-                        environment as well! 
-                    </p>
-                </div>
-            </div>
+    <div class="container">
+        <div class="image">
+            <img src="jack-luck-dog-logo.png">
         </div>
 
-        <br>
-        <hr>
+        <div class="text">
 
-        <div id="rocketripper" class="container my-5 ">
+            <h1 style="color: darkgreen;" class="text-center">Jack Luck Games</h1>
+            <p>We are a few passionate gamers and software developers. We are deeply enthusiastic about creating and
+                developing software applications that inspire and engage our users. We are constantly learning and experimenting with new
+                technologies and approaches, and we love to discover game play ideas that just make you keep coming back for more.
+            </p>
 
-            <div class="row justify-content-center">
-                <div class="col-2">
-                    <img src="RR-Landing-Page-iPhone.png" style="height: 510px;" alt="" srcset="">
-                </div>
-                <div class="col-6 align-self-top">
-                    <div class="my-3">
-                        <h1 style="color: darkgreen;" class="text-center">Rocket Ripper</h1>
-                        <h4 class="text-center"> Coming to the Apple App Store Soon</h4>
-                        <h5 class="text-center">  (Planned Release in March 2024)</h5>
-                        <br>
+            <p>Our current focus is developing 2D games for mobile, and we are hoping to release our first game in March 2024
+                on the Apple App Store. We will follow-up with a Android release shortly after the iOS release. The first game is
+                called Rocket Ripper. You can read more about this first game below.
+            </p>
 
-                        <p>Embark on the ultimate space adventure as the fearless pilot of your very own drone rocket ship! 
-                            Brace yourself for an adrenaline-fueled journey through the cosmos, where danger lurks around every corner. 
-                            Blast through the void, dodging treacherous asteroids and engaging in heart-pounding dogfights with enemy ships hell-bent on your destruction.
-                        </p>
-    
-                        <p>With stunning graphics and edge-of-your-seat gameplay, you'll feel the thrill of space exploration like never before. 
-                            Upgrade your ship and unlock special abilities to unleash devastating attacks on your foes. 
-                            But be warned: the challenges ahead are as vast as the universe itself.
-                        </p>
-    
-                        <p>Do you have what it takes to navigate the stars and emerge victorious? 
-                            Join the cosmic battle now and become the ultimate space hero in this thrilling mobile game! Try out the "How To Play" tutorial after downloading for some tips. 
-                            The upper left corner menu offers Ad Removal, Rocket Ship Store, and numerous settings.
-                        </p>
-                    </div>
-                </div>
-            </div>
+            <p>We are starting out as a family business with one full-time developer (dad) and two sons who could be considered full-time
+                gamers when their schoolwork is done. The sons have been instrumental in ideas and testing for this first game release. We hope
+                to start a youtube channel soon and begin some tutorials on Unity development. Like many indie game developers,
+                we have found Google searching and YouTube videos to be instrumental in helping us solve the problem of the day. 
+                We'd like to take some time and give back as well. Many thanks go to Unity for providing a great free-tier development 
+                environment as well! 
+            </p>
         </div>
-
-        <br>
-        <hr>
-
-
-        <div id="contact" class="my-4">
-            <div class="text-center mb-5">
-                <h1 style="color: darkgreen;">Contact Us</h1>
-            </div>
-
-            <div class="row ">
-                <style>
-                    I {
-                        font-size: 6em;
-                    }
-                </style>
-                <h5 class="text-center">Feel free to reach out to us for support or comments at jackluckgamesllc@gmail.com</h5>
-            </div>
-        </div>
-
-        <br>
-        <hr>
-
     </div>
+
+
+    <br>
+    <hr>
+
+    <div id="rocketripper" class="container">
+        <div class="image">
+            <img src="RR-Landing-Page-iPhone.png">
+        </div>
+
+        <div class="text">
+
+            <h1 style="color: darkgreen;" class="text-center">Rocket Ripper</h1>
+            <h4 class="text-center"> Coming to the Apple App Store Soon</h4>
+            <h5 class="text-center">  (Planned Release in March 2024)</h5>
+            <br>
+            <p>Embark on the ultimate space adventure as the fearless pilot of your very own drone rocket ship! 
+                Brace yourself for an adrenaline-fueled journey through the cosmos, where danger lurks around every corner. 
+                Blast through the void, dodging treacherous asteroids and engaging in heart-pounding dogfights with enemy ships hell-bent on your destruction.
+            </p>
+
+            <p>With stunning graphics and edge-of-your-seat gameplay, you'll feel the thrill of space exploration like never before. 
+                Upgrade your ship and unlock special abilities to unleash devastating attacks on your foes. 
+                But be warned: the challenges ahead are as vast as the universe itself.
+            </p>
+
+            <p>Do you have what it takes to navigate the stars and emerge victorious? 
+                Join the cosmic battle now and become the ultimate space hero in this thrilling mobile game! Try out the "How To Play" tutorial after downloading for some tips. 
+                The upper left corner menu offers Ad Removal, Rocket Ship Store, and numerous settings.
+            </p>
+            <br>
+            <a href="rr-privacy.html">Rocket Ripper Privacy and Terms</a>
+        </div>
+    </div>
+
+    <br>
+    <hr>
+
+
+    <div id="contact" class="my-4">
+        <div class="text-center mb-5">
+            <h1 style="color: darkgreen;">Contact Us</h1>
+        </div>
+
+        <div class="row ">
+            <style>
+                I {
+                    font-size: 6em;
+                }
+            </style>
+            <h5 class="text-center">Feel free to reach out to us for support or comments at jackluckgamesllc@gmail.com</h5>
+        </div>
+    </div>
+
+    <br>
+    <hr>
 
 
     <!-- JavaScript: Above  -->
