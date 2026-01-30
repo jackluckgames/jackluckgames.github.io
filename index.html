@@ -2,162 +2,277 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    
+    <title>Jack Luck Games | 100% Free Russian & Spanish Learning</title>
+    <meta name="description" content="Jack Luck Games: Creators of SlovoBox and Rocket Ripper. 100% Free Russian and Spanish vocabulary tools. Private, offline, and intuitive flashcards.">
+    <meta name="keywords" content="SlovoBox, Free Russian language app, Free Spanish vocabulary, learn Russian for free, Russian Vocabulary Flashcards, Spanish Vocabulary Flashcards, Rocket Ripper game, private language learning">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="theme-color" content="#05070a">
+    <meta name="apple-itunes-app" content="app-id=123456789">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.0/font/bootstrap-icons.css">
+    
     <style>
-        .container {
+        :root { 
+            --accent-green: #22c55e; 
+            --dark-pitch: #05070a; 
+            --section-alt: #0f172a; 
+            --text-dim: #94a3b8;
+        }
+        
+        body { 
+            background-color: var(--dark-pitch); 
+            color: #f8fafc; 
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        html { scroll-behavior: smooth; }
+
+        /* Navbar */
+        .navbar { background: rgba(5, 7, 10, 0.95) !important; backdrop-filter: blur(20px); border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        /* HERO: Dynamic Scaling */
+        .hero { padding: 140px 0 80px; text-align: center; }
+        .logo-img { max-width: 160px; height: auto; margin-bottom: 25px; }
+        .hero-title { font-size: clamp(2.4rem, 9vw, 4.2rem); font-weight: 800; line-height: 1.1; letter-spacing: -1px; }
+
+        /* SECTIONS */
+        .section-padding { padding: 80px 0; }
+        .bg-slovobox { background-color: var(--section-alt); }
+        .bg-rocket { background: linear-gradient(180deg, var(--dark-pitch) 0%, #0a110a 100%); }
+
+        /* CARDS: Derived from SwiftUI usageRow */
+        .usage-card { 
+            background: rgba(255,255,255,0.03); 
+            border-radius: 20px; 
+            padding: 24px; 
+            border: 1px solid rgba(255,255,255,0.05);
+            height: 100%;
+            transition: 0.3s;
+        }
+        .usage-card:hover { border-color: var(--accent-green); background: rgba(34, 197, 94, 0.04); }
+        
+        .icon-sq {
+            width: 44px;
+            height: 44px;
+            background: rgba(34, 197, 94, 0.15);
+            color: var(--accent-green);
+            border-radius: 10px;
             display: flex;
-            align-items: top;
-            justify-content: center
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-bottom: 16px;
         }
 
-        img {
-            max-width: 100%; 
-            max-height: 100%;
-            float:left; 
-            margin: 5px;
+        .app-icon { 
+            width: 120px; 
+            border-radius: 22.5%; 
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5); 
+            margin-bottom: 25px; 
         }
 
-        .text {
-            font-size: 20px;
-            padding-left: 20px;
+        /* Official Store Button */
+        .btn-appstore {
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #444;
+            border-radius: 12px;
+            padding: 10px 24px;
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            transition: 0.2s;
         }
+        .btn-appstore:active { transform: scale(0.97); }
+        .btn-appstore i { font-size: 30px; margin-right: 14px; }
+        .btn-appstore-text { text-align: left; line-height: 1.1; }
+        .btn-appstore-sub { font-size: 11px; font-weight: 400; opacity: 0.8; }
+        .btn-appstore-main { font-size: 19px; font-weight: 600; }
 
-        navbar-fixed-top {
-            top: 0;
-            border-width: 0 0 1px;
+        .offcanvas { background-color: var(--dark-pitch); color: #cbd5e1; }
+
+        @media (max-width: 768px) {
+            .hero-title br { display: block; }
+            .mobile-center { text-align: center !important; }
         }
-
     </style>
-
-    <title>Jack Luck Games</title>
 </head>
-
 <body>
-    <nav class="navbar navbar-dark navbar-expand-lg bg-dark navbar-default fixed-top">
-        <div class="container-fluid">
-            <div class="mx-4">
-                <a class="navbar-brand" href="index.html#">Jack Luck Games</a>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#rocketripper">Rocket Ripper</a>
-                    </li>
-                </ul>
+
+    <nav class="navbar navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">JACK LUCK <span style="color: var(--accent-green);">GAMES</span></a>
+            <div class="navbar-nav d-none d-md-flex flex-row gap-4">
+                <a class="nav-link" href="#slovobox">SlovoBox</a>
+                <a class="nav-link" href="#rocketripper">Rocket Ripper</a>
             </div>
         </div>
     </nav>
 
-    <br><br>
-    <br>
-
-    <div class="container">
-        <div class="image">
-            <img src="jack-luck-dog-logo.png">
+    <header class="hero">
+        <div class="container px-4">
+            <img src="jack-luck-dog-logo.png" alt="Jack Luck Games" class="logo-img">
+            <h1 class="hero-title mb-4">Small Team.<br><span style="color: var(--accent-green);">Big Experiences.</span></h1>
+            <p class="lead text-secondary mx-auto mb-0" style="max-width: 600px;">
+                Crafting engaging, private iOS apps.<br>100% free. No accounts. No tracking.
+            </p>
         </div>
+    </header>
 
-        <div class="text">
+    <section id="slovobox" class="section-padding bg-slovobox">
+        <div class="container px-4">
+            <div class="text-center mb-5">
+                <img src="SlovoBox-Icon-v2.png" class="app-icon" alt="SlovoBox Icon">
+                <h2 class="display-5 fw-bold mb-2">SlovoBox</h2>
+                <p class="text-success fw-bold text-uppercase tracking-wider small mb-4">Free, Ad-Free, Linguistic Toolkit</p>
+                
+                <div class="btn-appstore disabled-look mb-4">
+                    <i class="bi bi-apple"></i>
+                    <div class="btn-appstore-text">
+                        <div class="btn-appstore-sub">Coming Soon to the</div>
+                        <div class="btn-appstore-main">App Store</div>
+                    </div>
+                </div>
+                
+                <div class="d-block">
+                    <button class="btn btn-link text-secondary text-decoration-none p-0" data-bs-toggle="offcanvas" data-bs-target="#privacySlide">
+                        Privacy & On-Device Policy <i class="bi bi-chevron-right small"></i>
+                    </button>
+                </div>
+            </div>
 
-            <h1 style="color: darkgreen;" class="text-center">Jack Luck Games</h1>
-            <p>We are a few passionate gamers and software developers. We are deeply enthusiastic about creating and
-                developing software applications that inspire and engage our users. We are constantly learning and experimenting with new
-                technologies and approaches, and we love to discover game play ideas that just make you keep coming back for more.
-            </p>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="usage-card">
+                        <div class="icon-sq"><i class="bi bi-layers-half"></i></div>
+                        <h5 class="fw-bold">Calibrate Your Skills</h5>
+                        <p class="text-secondary small mb-0">Rank your confidence in every word. Focus your study sessions specifically on what you are currently learning.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="usage-card">
+                        <div class="icon-sq"><i class="bi bi-shield-check"></i></div>
+                        <h5 class="fw-bold">Seal Your Knowledge</h5>
+                        <p class="text-secondary small mb-0">Once mastered, move words into your permanent vault to clear your daily study deck.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="usage-card">
+                        <div class="icon-sq"><i class="bi bi-eye-slash-fill"></i></div>
+                        <h5 class="fw-bold">Hidden Translations</h5>
+                        <p class="text-secondary small mb-0">Test your recall. Tap to reveal specific words or toggle the "Eye" to see the full list.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="usage-card">
+                        <div class="icon-sq"><i class="bi bi-hand-index-thumb"></i></div>
+                        <h5 class="fw-bold">Swipe to Act</h5>
+                        <p class="text-secondary small mb-0">Master the study tab in seconds. Swipe Right to mark as Known; Swipe Left to rate.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="usage-card">
+                        <div class="icon-sq"><i class="bi bi-grid-1x2"></i></div>
+                        <h5 class="fw-bold">iOS Widgets</h5>
+                        <p class="text-secondary small mb-0">Keep your momentum alive with Lock Screen widgets that cycle through your deck.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <p>Our current focus is developing 2D games for mobile, and we are hoping to release our first game in March 2024
-                on the Apple App Store. We will follow-up with a Android release shortly after the iOS release. The first game is
-                called Rocket Ripper. You can read more about this first game below.
-            </p>
+    <section id="rocketripper" class="section-padding bg-rocket">
+        <div class="container px-4">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-5 text-center mb-5 mb-lg-0">
+                    <img src="RR-Landing-Page-iPhone.png" class="app-icon" alt="Rocket Ripper">
+                    <h2 class="display-5 fw-bold mb-2">Rocket Ripper</h2>
+                    <p class="text-success fw-bold text-uppercase tracking-wider small mb-4">Arcade Action</p>
+                    
+                    <a href="https://apps.apple.com/app/id6475631979" target="_blank" class="btn-appstore">
+                        <i class="bi bi-apple"></i>
+                        <div class="btn-appstore-text">
+                            <div class="btn-appstore-sub">Download on the</div>
+                            <div class="btn-appstore-main">App Store</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-7">
+                    <h3 class="display-6 fw-bold mb-4 mobile-center">Blast Through the Cosmos</h3>
+                    <div class="row g-3">
+                        <div class="col-12">
+                            <div class="usage-card">
+                                <h5 class="text-success"><i class="bi bi-rocket-takeoff me-2"></i>Ship Upgrades</h5>
+                                <p class="text-secondary small mb-0">Unlock special abilities to unleash devastating attacks on enemy ships hell-bent on your destruction.</p>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <div class="usage-card">
+                                <h5 class="text-success"><i class="bi bi-controller me-2"></i>Elite Controls</h5>
+                                <p class="text-secondary small mb-0">Engineered for iOS. High-speed asteroid dodging and dogfights with zero lag.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-            <p>We are starting out as a family business with one full-time developer (dad) and two sons who could be considered full-time
-                gamers when their schoolwork is done. The sons have been instrumental in ideas and testing for this first game release. We hope
-                to start a youtube channel soon and begin some tutorials on Unity development. Like many indie game developers,
-                we have found Google searching and YouTube videos to be instrumental in helping us solve the problem of the day. 
-                We'd like to take some time and give back as well. Many thanks go to Unity for providing a great free-tier development 
-                environment as well! 
-            </p>
+    <footer id="contact" class="section-padding bg-black">
+        <div class="container text-center px-4">
+            <h4 class="fw-bold mb-4">Get in Touch</h4>
+            <a href="mailto:jackluckgamesllc@gmail.com" class="text-success text-decoration-none fw-bold h5">jackluckgamesllc@gmail.com</a>
+            <p class="small mt-5 opacity-40">© 2026 Jack Luck Games, LLC.<br>Family-Built Independent Development</p>
+        </div>
+    </footer>
+
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="privacySlide" style="width: 400px;">
+        <div class="offcanvas-header border-bottom border-secondary">
+            <h5 class="offcanvas-title fw-bold">Privacy & Usage Policy</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="mb-4">
+                <h6 class="text-white fw-bold"><i class="bi bi-shield-lock text-success me-2"></i>Ownership</h6>
+                <p class="small text-secondary">SlovoBox and Rocket Ripper are owned and published by Jack Luck Games, LLC. All rights reserved.</p>
+            </div>
+
+            <div class="mb-4">
+                <h6 class="text-white fw-bold"><i class="bi bi-person-x text-success me-2"></i>Data Collection</h6>
+                <p class="small text-secondary">SlovoBox does not collect, track, or transmit personal data. We use zero third-party analytics, tracking SDKs, or advertising services. In-App Purchases (Support the Developer) are processed securely by Apple and are subject to Apple’s Privacy Policy.</p>
+            </div>
+
+            <div class="mb-4">
+                <h6 class="text-white fw-bold"><i class="bi bi-hdd text-success me-2"></i>Local Storage</h6>
+                <p class="small text-secondary">Your word progress, confidence ratings, and language preferences are saved locally on your device using system storage (UserDefaults). This data is never synced to external servers. Deleting the app will permanently remove this data.</p>
+            </div>
+
+            <div class="mb-4">
+                <h6 class="text-white fw-bold"><i class="bi bi-envelope text-success me-2"></i>Support</h6>
+                <p class="small text-secondary">For privacy inquiries or technical support, contact us at <a href="mailto:jackluckgamesllc@gmail.com" class="text-success text-decoration-none">jackluckgamesllc@gmail.com</a>.</p>
+            </div>
+
+            <hr class="border-secondary">
+            <p class="text-center opacity-50" style="font-size: 10px;">Last Updated: January 2026</p>
         </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-    <br>
-    <hr>
-
-    <div id="rocketripper" class="container">
-        <div class="image">
-            <img src="RR-Landing-Page-iPhone.png">
-        </div>
-
-        <div class="text">
-
-            <h1 style="color: darkgreen;" class="text-center">Rocket Ripper</h1>
-            <h4 class="text-center"> Coming to the Apple App Store Soon</h4>
-            <h5 class="text-center">  (Planned Release in March 2024)</h5>
-            <br>
-            <p>Embark on the ultimate space adventure as the fearless pilot of your very own drone rocket ship! 
-                Brace yourself for an adrenaline-fueled journey through the cosmos, where danger lurks around every corner. 
-                Blast through the void, dodging treacherous asteroids and engaging in heart-pounding dogfights with enemy ships hell-bent on your destruction.
-            </p>
-
-            <p>With stunning graphics and edge-of-your-seat gameplay, you'll feel the thrill of space exploration like never before. 
-                Upgrade your ship and unlock special abilities to unleash devastating attacks on your foes. 
-                But be warned: the challenges ahead are as vast as the universe itself.
-            </p>
-
-            <p>Do you have what it takes to navigate the stars and emerge victorious? 
-                Join the cosmic battle now and become the ultimate space hero in this thrilling mobile game! Try out the "How To Play" tutorial after downloading for some tips. 
-                The upper left corner menu offers Ad Removal, Rocket Ship Store, and numerous settings.
-            </p>
-            <br>
-            <a href="rr-terms-and-privacy-and-credits.html">Rocket Ripper Privacy and Terms</a>
-        </div>
-    </div>
-
-    <br>
-    <hr>
-
-
-    <div id="contact" class="my-4">
-        <div class="text-center mb-5">
-            <h1 style="color: darkgreen;">Contact Us</h1>
-        </div>
-
-        <div class="row ">
-            <style>
-                I {
-                    font-size: 6em;
-                }
-            </style>
-            <h5 class="text-center">Feel free to reach out to us for support or comments at jackluckgamesllc@gmail.com</h5>
-        </div>
-    </div>
-
-    <br>
-    <hr>
-
-
-    <!-- JavaScript: Above  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // If the URL ends in #privacy, open the sidebar automatically
+            if(window.location.hash === "#privacy") {
+                var myOffcanvas = document.getElementById('privacySlide');
+                var bsOffcanvas = new bootstrap.Offcanvas(myOffcanvas);
+                bsOffcanvas.show();
+            }
+        });
+    </script>
+    
 </body>
-
-<footer class="text-center text-lg-start bg-body-tertiary text-muted">
-<div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-    © 2024 Copyright:
-    <a class="text-reset fw-bold" href="https://jackluckgames.com">Jack Luck Games LLC</a>
-  </div>
-  </footer>
-
 </html>
