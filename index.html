@@ -203,6 +203,33 @@
             transition: height 0.35s ease-in-out;
         }
 
+        /* Updated: High-Visibility Cyan Glow */
+        .screenshot-wrapper {
+            position: relative;
+            display: inline-block;
+            background: rgba(6, 182, 212, 0.03); /* Subtle internal background */
+            border-radius: 20px; /* Match the screenshot corner radius */
+            padding: 10px; /* Small padding to contain the blur */
+        }
+
+        .screenshot-wrapper::after {
+            content: "";
+            position: absolute;
+            top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 90%; /* Larger blur area */
+            height: 90%; /* Larger blur area */
+            
+            /* Using a brighter cyan (cyan 300) for better visibility */
+            background: #67e8f9; 
+            
+            /* Stronger blur and opacity */
+            filter: blur(80px); /* Lowering the blur radius often makes it more visible */
+            opacity: 0.25; /* Higher opacity */
+            
+            z-index: -1; /* Confirmed as behind the screenshot */
+        }
+
     </style>
 </head>
 <body>
@@ -282,32 +309,36 @@
         </div>
     </div>
 
-    <section id="slovopop" class="section-padding" style="background-color: var(--dark-pitch); border-top: 1px solid rgba(34, 197, 94, 0.1);">
+    <section id="slovopop" class="section-padding" style="background-color: var(--dark-pitch); border-top: 1px solid rgba(6, 182, 212, 0.1);">
         <div class="container px-4">
             <div class="row align-items-center">
-                <div class="col-lg-5 text-center mb-5 mb-lg-0">
-                    <img src="SlovoPopIconv1.png" class="app-icon" alt="SlovoPop Icon">
-                    
+                <div class="col-lg-5 text-center text-lg-start mb-5 mb-lg-0">
+                    <img src="SlovoPopIconv1.png" class="app-icon mb-4" alt="SlovoPop Icon" style="width: 100px;">
                     <h2 class="display-5 fw-bold mb-2">SlovoPop</h2>
                     <p class="text-info fw-bold text-uppercase tracking-wider small mb-4">Coming Soon: A Linguistic Arcade</p>
-                    <span class="badge rounded-pill bg-dark border border-info text-info px-3 py-2">SPRING 2026</span>
-                </div>
-                <div class="col-lg-7">
                     <h3 class="display-6 fw-bold mb-4">Ignite Your Memory.</h3>
-                    <p class="text-secondary mb-4">Experience the "Flow State" of language learning. Burst through the vocabulary stream in a high-speed arcade environment designed to lock words into your long-term memory.</p>
-                    <div class="row g-3">
-                        <div class="col-md-6">
-                            <div class="usage-card">
-                                <h5 class="text-info"><i class="bi bi-lightning-charge-fill me-2"></i>Synapse Overdrive</h5>
-                                <p class="text-secondary small mb-0">Push your mental heat to the limit to trigger scoring multipliers and rapid-fire word replacement.</p>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div class="usage-card">
-                                <h5 class="text-info"><i class="bi bi-shield-check me-2"></i>Persistent Mastery</h5>
-                                <p class="text-secondary small mb-0">Progress through levels across multiple languages and difficulties. Your growth is saved entirely on-device.</p>
-                            </div>
-                        </div>
+                    <p class="text-secondary mb-4">Experience the "Flow State" of language learning. Burst through the vocabulary stream in a high-speed environment.</p>
+                    <span class="badge rounded-pill bg-dark border border-info text-info px-4 py-2">SPRING 2026</span>
+                </div>
+
+                <div class="col-lg-7 text-center">
+                    <div class="screenshot-wrapper">
+                        <img src="SlovoPop-Screenshot.png" class="img-fluid rounded-4 shadow-lg" alt="SlovoPop Gameplay" style="max-height: 600px; border: 1px solid rgba(6, 182, 212, 0.3);">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row g-4 mt-5">
+                <div class="col-md-6">
+                    <div class="usage-card">
+                        <h5 class="text-info"><i class="bi bi-lightning-charge-fill me-2"></i>Synapse Overdrive</h5>
+                        <p class="text-secondary small mb-0">Push your mental heat to the limit to trigger scoring multipliers and rapid-fire word replacement.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="usage-card">
+                        <h5 class="text-info"><i class="bi bi-shield-check me-2"></i>Persistent Mastery</h5>
+                        <p class="text-secondary small mb-0">Progress through levels across multiple languages. Your growth is saved entirely on-device.</p>
                     </div>
                 </div>
             </div>
